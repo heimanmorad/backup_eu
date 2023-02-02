@@ -40,6 +40,7 @@ Gem::Specification.new do |gem|
   ##
   # Dependencies
   gem.add_dependency('fog', ["0.3.34"])
+  gem.add_dependency('mime-types', ["1.16"])
   gem.add_dependency('json_pure', ["1.4.6"])
   gem.add_dependency('net-ssh', ["2.0.23"])
   gem.add_dependency('net-scp', ["1.0.4"])
