@@ -44,7 +44,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('net-ssh', ["2.0.23"])
   gem.add_dependency('net-scp', ["1.0.4"])
   gem.add_dependency('net-sftp', ["2.0.5"])
-  gem.add_dependency('activerecord', ["2.3.5"])
+  gem.add_dependency('activerecord', ["2.3.18"])
   gem.add_dependency('sqlite3-ruby', ["1.3.3"])
   gem.add_dependency('hirb', ["0.5.0"])
   gem.add_dependency('pony', ["1.3"])
