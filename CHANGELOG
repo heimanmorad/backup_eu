@@ -1,0 +1,131 @@
+UPDATE
+=== 2.4.1 ======================================
+
+	Dropbox storage added.
+
+
+BIG UPDATE
+=== 2.4.0 =======================================
+  
+  Ruby on Rails 3 support
+  
+
+PATCH
+=== 2.3.3.1 =====================================
+
+  Fixes an issue when trying to use S3. It would try to create a bucket
+  when one already exists and this raises an error.
+  
+
+UPDATE
+=== 2.3.3 =======================================
+
+  Set final_file to encrypted_file only when encryption is used.
+
+
+UPDATE
+=== 2.3.2 =======================================
+  
+  - Only load 'pony' and 'optparse' when they need to be utilized.
+  - Only uses 'sudo' if BACKUP_PATH is not writable by current user.
+  - With Cloud Files storage, it will automatically create the bucket if it does not yet exist.
+  - Backup's logger will now display the current time when logging. Now also indicates what S3 bucket it
+    is being backed up to, as well as what the filename is.
+  - Backup now supports GPG public key encryption which is a new and more safe way to encrypt your data.
+  
+  
+MINOR UPDATE
+=== 2.3.2.pre3 ==================================
+
+  - Added support for Rackspace Cloud Files. Backups can now also be stored in Rackspace Cloud Files.
+
+
+MINOR UPDATE
+=== 2.3.2.pre2 ==================================
+
+  - Added support for Amazon S3 EEUU and European buckets.
+
+
+BIG UPDATE
+=== 2.3.2.pre ==================================
+
+  - Added Storage Method: Local
+  - Added Adapter: SQLite
+  - exclude option added for Archive Adapter
+  - Internal cleanup
+  - Will try to automatically determine the path to mysqldump and pg_dump utilities
+  - Option to specify which tables to include for the backup
+  - The ability to specify a custom backup (unix environment) installation folder with ENV['BACKUP_PATH']
+  - Fixed dependency issue with SQLite3 Ruby Driver (must be 1.2.5)
+  - Removed Jeweler from Backup, the Gemspec should be manually updated from now on.
+  - Added spec/tests
+
+
+MINOR UPDATE
+=== 2.3.1 ======================================
+
+  - Added Feature: Email notifications
+
+
+PATCH
+=== 2.3.0.3 ====================================
+
+  - Small bug was patched. Error would occur when a list of triggers should be shown
+	
+
+BIG UPDATE
+=== 2.3.0 ====================================
+  
+  - Backup became independent of Ruby on Rails
+  - Backup now supports multiple environments: Rails and Unix
+  - Backup is now executable through the command-line when using the Unix environment
+
+
+SMALL FEATURE UPDATE
+=== 2.2.1 ====================================
+  
+  - use_ssl option added for S3 Storage Method
+  - additional_options option added for MySQL and PostgreSQL Adapters
+
+
+PRETTY BIG UPDATE
+=== 2.2.0 ====================================
+  
+  - Added Storage Methods: FTP and SFTP
+  - Added Adapters: PostgreSQL and Custom
+  - Added more options to the MySQL Adapter
+  - A couple of bug fixes
+
+
+MINOR UPDATE
+=== 2.1.2 ====================================
+  
+  - The backup generator will now provide you with a step-by-step guide to getting up and running
+  - Updated the generator itself
+  - Removed SQLite3 dependencies
+  
+
+2 TABLES 2 1
+=== 2.1.1 ====================================
+  
+  - Backup will from now on only utilize one table, instead of one for each storage method
+  - Still backwards compatible to 2.1.0
+  
+
+FIXED A CRUCIAL BUG
+=== 2.1.0 ====================================
+
+  - Problem with Backup::Record. It tried to connect to the SQLite3 database.
+
+
+MAJOR RELEASE
+=== 2.0.0 ====================================
+
+  - Should be a lot more backwards compatible with every update I do.
+  - Does not depend on the separate local SQLite3 file any longer.
+  - Will provide a db migration file for your Rails Application to store backup record data in.
+  - Does not use YAML files to do configuration any longer.
+  - Uses a SINGLE ruby file for "all" configuration (config/backup.rb) using elegant block notations!
+  - Uses a SINGLE rake task to handle the initialization of any backup setting.
+  - Can now configure an unlimited amount of customizable backup settings and run them each "individually"!
+  - HIGHLY IMPROVED USABILITY!
